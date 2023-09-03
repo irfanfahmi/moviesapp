@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Movies App</string>
+    <string name="text_loading">Loading...</string>
+    <string name="url_image">https://image.tmdb.org/t/p/w500/</string>
+    <string name="text_discovery">Discovery</string>
+    <string name="descriptionimage">descriptionImage</string>
+    <string name="text_no_data">Data Not Found</string>
+    <string name="text_internet_error">Internet Error</string>
+
+</resources>

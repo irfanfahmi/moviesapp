@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail_movie.DetailMovieActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivImageBackdrop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvImagePoster"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_marginHorizontal="16dp"
+            android:elevation="16dp"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivImageBackdrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivImageBackdrop"
+            app:layout_constraintVertical_bias="0.15">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivImagePoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_placeholder"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvOriginalTitle"
+            style="@style/TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/cvImagePoster"
+            app:layout_constraintTop_toBottomOf="@+id/ivImageBackdrop" />
+
+        <ImageView
+            android:id="@+id/ivRating"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:contentDescription="@string/descriptionimage"
+            android:src="@drawable/ic_rating"
+            app:layout_constraintStart_toEndOf="@+id/cvImagePoster"
+            app:layout_constraintTop_toBottomOf="@+id/tvOriginalTitle" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRating"
+            app:layout_constraintStart_toEndOf="@+id/ivRating"
+            app:layout_constraintTop_toTopOf="@+id/ivRating" />
+
+        <TextView
+            android:id="@+id/tvOriginalLanguage"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/background_grey"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRating"
+            app:layout_constraintStart_toEndOf="@+id/tvRating"
+            app:layout_constraintTop_toTopOf="@+id/ivRating" />
+
+
+        <TextView
+            android:id="@+id/tvRunTime"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOriginalLanguage"
+            app:layout_constraintStart_toEndOf="@+id/tvOriginalLanguage"
+            app:layout_constraintTop_toTopOf="@+id/tvOriginalLanguage" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Overview"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvGenre" />
+
+        <TextView
+            android:id="@+id/tvRealeaseDate"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/cvImagePoster"
+            app:layout_constraintStart_toStartOf="@+id/cvImagePoster"
+            app:layout_constraintTop_toBottomOf="@+id/cvImagePoster" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGenre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cvImagePoster"
+            app:layout_constraintTop_toBottomOf="@+id/ivRating"
+            app:layout_goneMarginTop="8dp"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_genre" />
+
+        <TextView
+            android:id="@+id/tvOverview"
+            style="@style/TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textVie5"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Trailer"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOverview" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTrailer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textVie5"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_trailer" />
+
+        <TextView
+            android:id="@+id/textVie4"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Review"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvTrailer" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textVie4"
+            app:layout_constraintVertical_bias="0.0"
+            tools:itemCount="3"
+            tools:layout_editor_absoluteX="0dp"
+            tools:listitem="@layout/item_review" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
